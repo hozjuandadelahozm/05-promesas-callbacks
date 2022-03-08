@@ -13,21 +13,20 @@ const heroes = {
     },
 }
 
-export const buscarHeroe = (  id, callback ) => {
+export const buscarHeroe = ( id ) => {
 
-    const heroe = heroes[id];
+    const heroe = heroes[ id ];
 
-    if( heroe ) {
-        callback( null, heroe );
-    } else {
-        // Un error
-        callback(`No existe un heroe con el id ${ id }`);
-    }
+    return new Promise( ( resolve, reject ) => {
 
-    // callback( heroe );
+        if( heroe ){
+            resolve( heroe );
+        } else {
+            reject(`No existe un heroe con el id ${ id }`);
+        }
+    });
 
 }
 
-// export { buscarHeroe };
 
 
