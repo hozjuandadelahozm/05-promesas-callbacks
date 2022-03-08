@@ -25,7 +25,36 @@ export const buscarHeroe = ( id ) => {
             reject(`No existe un heroe con el id ${ id }`);
         }
     });
+}
 
+export const buscarHeroeAsync = async( id ) => {
+
+    const heroe = heroes[ id ];
+
+        if( heroe ){
+            return heroe;
+        } else {
+            throw `No existe un heroe con el id ${ id }`;
+        }
+}
+
+
+const promesaLenta = new Promise( ( resolve, reject ) => {
+    setTimeout(() => resolve('Promesa Lenta', 'prueba'), 2000);
+});
+
+const promesaMedia = new Promise( ( resolve, reject ) => {
+    setTimeout(() => resolve('Promesa Media'), 1500);
+});
+
+const promesaRapida = new Promise( ( resolve, reject ) => {
+    setTimeout(() => resolve('Promesa Rápida'), 1000);
+});
+
+export {
+    promesaLenta,
+    promesaMedia,
+    promesaRapida
 }
 
 
