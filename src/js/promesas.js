@@ -4,7 +4,7 @@ const heroes = {
         poder: 'Aguantar inyecciones sin morir'
     },
     iron: {
-        nombre: 'Iroman',
+        nombre: 'Ironman',
         poder: 'Absurda cantidad de dinero'
     },
     spider: {
